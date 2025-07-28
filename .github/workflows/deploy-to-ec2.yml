@@ -1,26 +1,36 @@
-name: Deploy Static Files to EC2
+name: Deploy via Git Clone on EC2
 
 on:
   push:
-    branches: ["main"]  # Trigger on pushes to main branch
+    branches: ["main"]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout code (local)
         uses: actions/checkout@v4
 
-      - name: Copy files to EC2 via SSH/SCP
+      - name: Clone repo on EC2 and deploy
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.SSH_HOST }}  
-          username: ${{ secrets.SSH_PRIVATE_KEY }} 
-          key: ${{ secrets.EC2_SSH_KEY }} 
-          script_stop: true 
-          scp: |
-            ./public/* /var/www/itdefined.com/   # Copies all files from local 'public/' dir
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            # Navigate to web directory
+            cd /var/www
+            
+            # Remove old files (optional)
+            sudo rm -rf itdefined.com
+            
+            # Clone repository (using GitHub credentials)
+            sudo git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/your-username/your-repo.git itdefined.com
+            
+            # Set permissions
             sudo chown -R www-data:www-data /var/www/itdefined.com
+            sudo chmod -R 755 /var/www/itdefined.com
+            
+            # Restart web server
             sudo systemctl restart nginx
