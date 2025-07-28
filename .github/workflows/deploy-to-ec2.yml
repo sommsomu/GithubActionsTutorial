@@ -15,7 +15,7 @@ jobs:
       - name: Copy files to EC2 via SSH/SCP
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.SSH_HOST }} 
+          host: ${{ secrets.SSH_HOST }}  
           username: ${{ secrets.SSH_PRIVATE_KEY }} 
           key: ${{ secrets.EC2_SSH_KEY }} 
           script_stop: true 
