@@ -40,5 +40,4 @@ jobs:
             # Restart web server
             echo "Restarting nginx..."
             sudo systemctl restart nginx
-
-            echo "Fresh deployment complete!"
+            echo "Fresh deployment complete!" 
