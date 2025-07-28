@@ -22,7 +22,7 @@ jobs:
             REPO_DIR="/var/www/itdefined.com"
             GIT_REPO="https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git"
             
-            # Fix Git ownership issue
+            
             sudo git config --global --add safe.directory "$REPO_DIR"
             
             if [ ! -d "$REPO_DIR/.git" ]; then
