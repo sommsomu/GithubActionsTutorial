@@ -1,6 +1,10 @@
 # This is demo workflow 3 for GitHub Actions.
 name: demo3
-on: workflow_dispatch
+on: 
+    workflow_dispatch:
+    
+    push:
+        branches: [ main ]
 
 jobs:
     check-self-hosted:
