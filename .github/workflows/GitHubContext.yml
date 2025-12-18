@@ -1,3 +1,4 @@
+# This workflow prints various GitHub context variables available in GitHub Actions.
 name: Print GitHub Context Variables
 
 on: workflow_dispatch  # Allows manual triggering of the workflow

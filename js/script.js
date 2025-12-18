@@ -1,3 +1,4 @@
+// This JavaScript file contains interactive scripts for the IT Defined website, including navbar scroll effects and smooth scrolling for anchor links.
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');

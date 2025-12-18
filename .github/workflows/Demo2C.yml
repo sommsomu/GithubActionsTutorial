@@ -1,3 +1,4 @@
+# This workflow demonstrates continuing execution even if a job fails in GitHub Actions.
 name: Continue on Failure
 
 on: [push]

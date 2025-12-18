@@ -1,4 +1,5 @@
-name: GitHub Actions – All Variables Demo
+# This workflow demonstrates the use of various types of variables in GitHub Actions, including environment variables, secrets, and inputs.
+name: GitHub Actions - All Variables Demo
 
 on:
   workflow_dispatch:

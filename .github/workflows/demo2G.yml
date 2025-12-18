@@ -1,3 +1,4 @@
+# This workflow demonstrates the combined use of inputs, environment variables, secrets, and variables in GitHub Actions.
 name: Combined Inputs, Env, Secrets, and Variables
 run-name: Combined Inputs, Env, Secrets, and Variables
 on:

@@ -1,3 +1,4 @@
+# This workflow allows selective running of jobs in GitHub Actions.
 name: Selective Job Runner
 on:
   workflow_dispatch:

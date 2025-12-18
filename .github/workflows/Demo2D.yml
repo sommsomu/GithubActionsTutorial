@@ -1,3 +1,4 @@
+# This workflow demonstrates passing data between jobs in GitHub Actions using job outputs.
 name: Pass Data Between Jobs
 
 on: [push]

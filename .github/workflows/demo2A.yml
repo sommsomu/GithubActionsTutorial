@@ -1,3 +1,4 @@
+# This workflow demonstrates running jobs sequentially in GitHub Actions.
 name: Sequential Jobs Example
 
 on: [push]

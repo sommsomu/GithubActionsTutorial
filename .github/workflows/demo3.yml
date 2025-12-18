@@ -1,3 +1,4 @@
+# This workflow deploys the application to EC2 using easingthemes action in GitHub Actions.
 name: Deploy to EC2 using easingthemes
 
 on:

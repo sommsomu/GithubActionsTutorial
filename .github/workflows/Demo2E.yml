@@ -1,3 +1,4 @@
+# This workflow demonstrates passing files between jobs using artifacts in GitHub Actions.
 name: Pass File Between Jobs
 
 on: [push]

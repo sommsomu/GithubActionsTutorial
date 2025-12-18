@@ -1,3 +1,4 @@
+# This workflow lists and views artifacts in GitHub Actions.
 name: List and View Artifacts
 
 on:

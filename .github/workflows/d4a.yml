@@ -1,3 +1,4 @@
+# This workflow lists the files in the repository using GitHub Actions.
 name: List Repository Files
 
 on:

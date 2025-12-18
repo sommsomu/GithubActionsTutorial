@@ -1,3 +1,4 @@
+# This workflow clones the repository and lists its files using GitHub Actions.
 name: Clone and List Files
 
 on:
