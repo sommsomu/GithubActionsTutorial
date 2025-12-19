@@ -6,12 +6,14 @@ on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: [3.13, 3.9]
-        node: [18, 20]
     steps:
-        - name: Matrix variable demo
-          run: |
-            echo "Matrix Node Version: ${{ matrix.node }}"
-            echo "Matrix Python Version: ${{ matrix.python }}"
+      - name: Repository variables demo
+        run: |
+          echo "APP_NAME        : ${{ vars.APP_NAME }}"
+          echo "DEPLOY_REGION   : ${{ vars.DEPLOY_REGION }}"
+
+      - name: Secrets demo (masked)
+        env:
+          DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
+        run: |
+          echo "Secret length is: ${#DEMO_SECRET}"
