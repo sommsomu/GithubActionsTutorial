@@ -1,23 +1,31 @@
 # This workflow demonstrates the use of various types of variables in GitHub Actions, including environment variables, secrets, and inputs.
 name: GitHub Actions - All Variables Demo
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment environment"
+        required: true
+        default: "dev"
+      version:
+        description: "Application version"
+        required: false
+        default: "1.0.0"
 env:
   GLOBAL_ENV: "global-env-value"
 
 jobs:
   build:
-    env:
-      JOB_ENV: "job-env-value"
     runs-on: ubuntu-latest
     steps:
-      - name: Environment variables demo
-        env:
-          STEP_ENV: "step-env-value"
+      # -------------------------
+      # INPUT VARIABLES
+      # -------------------------
+      - name: Workflow inputs demo
         run: |
-          echo "GLOBAL_ENV = $GLOBAL_ENV"
-          echo "JOB_ENV    = $JOB_ENV"
-          echo "STEP_ENV   = $STEP_ENV"
+          echo "Environment input : ${{ inputs.environment }}"
+          echo "Version input     : ${{ inputs.version }}"
 
 
 
@@ -37,7 +45,8 @@ jobs:
   #   # -------------------------
   #   # ENV VARIABLES (Job level)
   #   # -------------------------
-
+  #   env:
+  #     JOB_ENV: "job-env-value"
 
   #   steps:
   #     - name: Checkout repository
@@ -54,6 +63,17 @@ jobs:
   #         echo "Commit SHA      : ${{ github.sha }}"
   #         echo "Workflow name   : ${{ github.workflow }}"
   #         echo "Run number      : ${{ github.run_number }}"
+
+  #     # -------------------------
+  #     # ENV VARIABLES (Step level)
+  #     # -------------------------
+  #     - name: Environment variables demo
+  #       env:
+  #         STEP_ENV: "step-env-value"
+  #       run: |
+  #         echo "GLOBAL_ENV = $GLOBAL_ENV"
+  #         echo "JOB_ENV    = $JOB_ENV"
+  #         echo "STEP_ENV   = $STEP_ENV"
 
   #     # -------------------------
   #     # INPUT VARIABLES
