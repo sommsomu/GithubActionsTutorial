@@ -20,7 +20,8 @@ on:
 
 jobs:
   call-reusable-workflow:
-    uses: ./.github/workflows/reusable-node-setup.yml
+    #uses: ./.github/workflows/reusable-node-setup.yml
+    uses: itdorg4/GithubActionsTutorial/.github/workflows/reusable-node-setup.yml@main
     with:
       node-version: ${{ inputs.node_version || '18' }}
       environment: ${{ inputs.target_environment || 'development' }}
