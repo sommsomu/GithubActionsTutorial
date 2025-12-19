@@ -24,7 +24,6 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.job_to_run == 'job2' || github.event.inputs.job_to_run == 'all' }}
-    needs: job1
     steps:
       - name: Run Job 2
         run: echo "Running Job 2"
@@ -32,7 +31,6 @@ jobs:
   job3:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.job_to_run == 'job3' || github.event.inputs.job_to_run == 'all' }}
-    needs: job2
     steps:
       - name: Run Job 3
         run: echo "Running Job 3"
