@@ -16,7 +16,7 @@ jobs:
         id: demo-step
         uses: ./.github/actions/demo-action
         with:
-          input-name: "GitHub Actions"
+          name: "ITD"
       
       - name: Display Action Output
         run: |
