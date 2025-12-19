@@ -13,7 +13,5 @@ jobs:
           echo "DEPLOY_REGION   : ${{ vars.DEPLOY_REGION }}"
 
       - name: Secrets demo (masked)
-        env:
-          DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
         run: |
-          echo "Secret length is: ${#DEMO_SECRET}"
+          echo "Secret length is: ${{ secrets.DEMO_SECRET }}"
