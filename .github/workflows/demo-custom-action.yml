@@ -19,7 +19,7 @@ jobs:
         with:
           name: "ITD"
       
-      - name: Display Action Output
+      - name: Display Action output
         run: |
           echo "Custom action executed!"
           echo "Output from action: ${{ steps.demo-step.outputs.demo-output }}"
