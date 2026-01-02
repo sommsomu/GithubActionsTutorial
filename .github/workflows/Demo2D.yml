@@ -17,8 +17,7 @@ jobs:
           second_message="Second message from Job 1"
           echo "message=$message" >> $GITHUB_OUTPUT
           echo "second_message=$second_message" >> $GITHUB_OUTPUT
-          echo "Set output: $message"
-          echo "Set second output: $second_message"
+          
 
   job2:
     needs: job1
